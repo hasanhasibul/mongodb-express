@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
+require('dotenv').config()
 // require('dotenv').config();
 
 const app = express();
@@ -12,7 +13,7 @@ app.use(bodyParser.json());
 
 const pass='2tFukBx5QOK5AYLF';
 const user='dbUser';
-const uri="mongodb+srv://dbUser:2tFukBx5QOK5AYLF@cluster0-ezexp.mongodb.net/dbUser?retryWrites=true&w=majority"
+const uri=process.env.DB_PATH;
 //const uri = "mongodb+srv://dbUser:2tFukBx5QOK5AYLF@cluster0-ezexp.mongodb.net/dbUser?retryWrites=true&w=majority"; 
 
 // process.env.DB_PATH;
